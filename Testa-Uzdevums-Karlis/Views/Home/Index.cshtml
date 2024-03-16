@@ -1,0 +1,31 @@
+﻿<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <h1 id="title">Currency Rates</h1>
+    </section>
+
+    <div class="row">
+        <section class="col-md-12" aria-labelledby="currencyRatesTitle">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Flag</th>
+                        <th>Currency Code</th>
+                        <th>Rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var rate in ViewBag.CurrencyRates)
+                    {
+                        <tr>
+                            <td><img class="flag-image" src="~/Images/Flags/@(rate.CurrencyCode).png" alt="@rate.CurrencyCode flag" /></td>
+                            <td>@rate.CurrencyCode</td>
+                            <td>@rate.Rate</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <link rel="stylesheet" href="~/Content/styles.css">
+</main>
